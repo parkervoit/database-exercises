@@ -11,7 +11,7 @@ SHOW CREATE TABLE albums;
 --c. primary key is id
 SELECT max(release_date) FROM albums;
 SELECT min(release_date) FROM albums;
---d. oldest is Sgt Peppers by The Beatles and newest is 21 by Adele
+--d. oldest is Sgt Peppers by The Beatles(1967) and newest is 21 by Adele (2011)
 --4 
 SELECT * FROM albums WHERE artist = 'Pink Floyd';
     --a.Dark side of the moon and The Wall
