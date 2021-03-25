@@ -32,6 +32,6 @@ ORDER BY hire_date DESC;
 --7
 SELECT first_name, last_name, emp_no, birth_date, hire_date 
 FROM employees 
-WHERE birth_date LIKE '%12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 ORDER BY birth_date ASC, hire_date ASC;
     -- 362 employees returned, oldest hired last is Khun Bernini, youngest hired first is Douadi Pettis

@@ -12,7 +12,7 @@ LIMIT 10;
 --3
 SELECT first_name, last_name, emp_no, hire_date 
 FROM employees 
-WHERE birth_date LIKE '%12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 ORDER BY hire_date
 LIMIT 5;
 /* the 5 employees are:
@@ -24,7 +24,7 @@ LIMIT 5;
 --4
 SELECT first_name, last_name, emp_no, hire_date 
 FROM employees 
-WHERE birth_date LIKE '%12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 ORDER BY hire_date
 LIMIT 5 OFFSET 45;
 /* the tenth page of employees is:
