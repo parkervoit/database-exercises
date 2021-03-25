@@ -1,14 +1,18 @@
 --2
-SELECT DISTINCT title 
-FROM titles
+SELECT DISTINCT last_name 
+FROM employees
+ORDER BY last_name DESC
 LIMIT 10;
-/*  Senior Engineer
-    Staff
-    Engineer
-    Senior Staff
-    Assistant Engineer
-    Technique Leader
-    Manager*/
+/*  Zykh
+    Zyda
+    Zwicker
+    Zweizig
+    Zumaque
+    Zultner
+    Zucker
+    Zuberek
+    Zschoche
+    Zongker*/
 --3
 SELECT first_name, last_name, emp_no, hire_date 
 FROM employees 
