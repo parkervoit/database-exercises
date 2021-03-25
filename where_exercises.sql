@@ -14,6 +14,11 @@ WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya';
 SELECT first_name, last_name, emp_no 
 FROM employees 
 WHERE first_name IN ('Irena','Vidya','Maya') AND gender = 'M';
+
+SELECT first_name, last_name, emp_no 
+FROM employees 
+WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
+    AND gender = 'M';
     -- 441 rows returned
 --5
 SELECT first_name, last_name, emp_no 
@@ -27,8 +32,9 @@ WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
 
 SELECT first_name, last_name, emp_no 
 FROM employees 
-WHERE last_name LIKE '%E';
-    -- 30723 people have names that start or end with e, 24,292 end with e
+WHERE last_name LIKE '%E'
+    AND last_name NOT LIKE 'E%';
+    -- 30723 people have names that start or end with e, 23,393 end with e
 --7
 SELECT first_name, last_name, emp_no 
 FROM employees 
@@ -46,12 +52,12 @@ WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31';
 --9
 SELECT first_name, last_name, emp_no, birth_date 
 FROM employees 
-WHERE birth_date LIKE '%12-25';
+WHERE birth_date LIKE '%-12-25';
     -- 842 employees born on christmas
 --10
 SELECT first_name, last_name, emp_no, birth_date, hire_date 
 FROM employees 
-WHERE birth_date LIKE '%12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31';
+WHERE birth_date LIKE '%-12-25' AND hire_date BETWEEN '1990-01-01' AND '1999-12-31';
     -- 362 employees born on christmas and hired in the 90s
 --11
 SELECT first_name, last_name, emp_no 

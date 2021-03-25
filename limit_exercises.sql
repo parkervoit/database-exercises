@@ -29,7 +29,7 @@ ORDER BY hire_date
 LIMIT 5 OFFSET 45;
 /* the tenth page of employees is:
     Pranay	Narwekar
-    Marjo	Farrow
+    Marjo   Farrow
     Ennio	Karcich
     Dines	Lubachevsky
     Ipke	Fontan 
