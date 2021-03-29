@@ -1,14 +1,12 @@
 --2. Finds all employees who's last names start and end with e, puts thier first and last name in a column named full_name
 SELECT CONCAT(first_name ," ", last_name) AS full_name
 FROM employees 
-WHERE last_name LIKE 'E%' AND last_name LIKE '%E'
-ORDER BY emp_no;
+WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
 
 --3. Takes results from 2 and returns them in all caps
 SELECT UPPER (CONCAT(first_name ," ", last_name)) AS full_name
 FROM employees 
-WHERE last_name LIKE 'E%' AND last_name LIKE '%E'
-ORDER BY emp_no;
+WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
 
 --4. Find all employees hired in 90s and born on christmas, then find how many days they,ve been at the company.
 SELECT DATEDIFF(NOW(), hire_date) AS DaysWorked, first_name, last_name
@@ -28,4 +26,7 @@ SELECT LOWER(
                 SUBSTR(birth_date,3,2)
                 )
             )
-FROM employees:
+        first_name,
+        last_name,
+        birth_date,
+FROM employees;
