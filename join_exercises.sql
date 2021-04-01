@@ -49,7 +49,7 @@ ORDER BY dept_name ASC;
 --4 Find the current titles of employees currently working in customer service
 SELECT titles.title, COUNT(employees.emp_no)
 FROM departments AS dept
-JOIN dept_emp ON dept.dept_no = dept_emps.dept_no AND dept_emps.dept_no = 'd009'
+JOIN dept_emp ON dept.dept_no = dept_emp.dept_no AND dept_emp.dept_no = 'd009'
 JOIN employees ON dept_emp.emp_no = employees.emp_no
 JOIN titles ON employees.emp_no = titles.emp_no AND titles.to_date > CURDATE()
 GROUP BY titles.title;
@@ -64,7 +64,8 @@ ORDER BY dept_name;
 SELECT dept.dept_no, dept_name, COUNT(*) AS num_employees
 FROM departments AS dept
 JOIN dept_emp ON dept.dept_no = dept_emp.dept_no AND dept_emp.to_date > CURDATE()
-GROUP BY dept.dept_no, dept_name;
+GROUP BY dept.dept_no
+ORDER BY dept.dept_no;
 --7 Which department has the highest Salary?
 SELECT departments.dept_name, AVG(salaries.salary) AS average_salary
 FROM departments
