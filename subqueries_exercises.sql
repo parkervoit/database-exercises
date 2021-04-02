@@ -10,9 +10,10 @@ FROM titles
 JOIN employees ON titles.emp_no = employees.emp_no
 WHERE first_name IN (SELECT first_name FROM employees WHERE first_name = 'Aamod') AND titles.to_date > CURDATE();
 --3 How many people in the employees table are no longer working for the company? Give the answer in a comment in your code.
-SELECT *
-FROM dept_emp
-WHERE to_date IN (SELECT to_date FROM dept_emp WHERE to_date NOT LIKE '9999%');
+SELECT COUNT(*)
+FROM employees
+WHERE emp_no NOT IN (SELECT emp_no FROM dept_emp WHERE to_date LIKE '9999%');
+  --59900
 --4 Find all current department managers that are female. List their name. 
 SELECT first_name, last_name
 FROM employees
