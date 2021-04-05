@@ -22,6 +22,7 @@ SELECT CONCAT(first_name, ' ' , last_name) AS full_name,
 FROM employees
 ORDER BY alpha_group, full_name;
 --3. How many employees (current or previous) were born in each decade?
+-- Lists employees names by decade
 SELECT emp_no, CONCAT(first_name, ' ', last_name) AS full_name,
     CASE
     WHEN birth_date BETWEEN '1950-01-01' AND '1959-12-31' THEN '50s'
@@ -30,6 +31,15 @@ SELECT emp_no, CONCAT(first_name, ' ', last_name) AS full_name,
     END AS decade
 FROM employees
 ORDER BY decade DESC;
+-- lists amount of employees by decade
+SELECT COUNT(*),
+    CASE
+    WHEN birth_date BETWEEN '1950-01-01' AND '1959-12-31' THEN '50s'
+    WHEN birth_date BETWEEN '1960-01-01' AND '1969-12-31' THEN '60s'
+    ELSE 'not born in 50s or 60s'
+    END AS decade
+FROM employees
+GROUP BY decade;
 --4.
 -- finds averages by department
 SELECT departments.dept_name, AVG(salary) AS avg_salary
