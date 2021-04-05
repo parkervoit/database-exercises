@@ -13,7 +13,7 @@ WHERE first_name IN (SELECT first_name FROM employees WHERE first_name = 'Aamod'
 SELECT COUNT(*)
 FROM employees
 WHERE emp_no NOT IN (SELECT emp_no FROM dept_emp WHERE to_date LIKE '9999%');
-  --59900
+  --59900t
 --4 Find all current department managers that are female. List their name. 
 SELECT first_name, last_name
 FROM employees
